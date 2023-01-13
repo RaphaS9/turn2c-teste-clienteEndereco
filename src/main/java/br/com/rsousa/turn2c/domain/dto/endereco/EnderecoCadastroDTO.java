@@ -2,6 +2,7 @@ package br.com.rsousa.turn2c.domain.dto.endereco;
 
 import br.com.rsousa.turn2c.domain.model.Endereco;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -22,13 +23,12 @@ public class EnderecoCadastroDTO {
     @NotBlank
     private String logradouro;
 
-    @NotBlank
+    @NotNull
     @Pattern(regexp = "\\d{8}", message = "O cep deve conter 8 digitos")
-    private String cep;
+    private Integer cep;
 
-    @NotBlank
-    @Pattern(regexp = "\\d{1,10}", message = "Numero da casa inválido, deve ser do tipo numerico")
-    private String numero;
+    @NotNull
+    private Integer numero;
 
     @NotBlank
     private String cidade;
