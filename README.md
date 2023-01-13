@@ -17,7 +17,7 @@ Criar um CRUD para cadastrar os endereços do cliente, essa entidade cliente_end
 - Cidade (varchar)
 - Uf (varchar)
 
-## Tencologias Utilizadas
+## Tencologias utilizadas
 
 - Maven
 - Java 15
@@ -26,6 +26,22 @@ Criar um CRUD para cadastrar os endereços do cliente, essa entidade cliente_end
 - Spring data jpa
 - Banco de dados H2
 - Bean Validation
+
+<br>
+
+## Informações
+
+### Banco de Dados
+Estou usando o h2, e deixei configurado para subir a interface gráfica dele em /h2, caso seja necessário checar algo direto no banco.
+
+Também configurei a população do banco com alguns dados na inicialização do sistema.
+
+<br>
+
+
+### Respostas
+Estou devolvendo respostas para as requisições com ResponseEntity e status code de acordo com a requisição.
+Também há um ExceptionHandler configurado para algumas exceções, devolvendo mensagens personalizadas.
 
 <br>
 
@@ -62,8 +78,6 @@ Criar um CRUD para cadastrar os endereços do cliente, essa entidade cliente_end
 
 - #### GET /cliente/{id} (Listar cliente por id e seus endereços)
 <br>
-
-> <div>
 
  - #### PUT /cliente/{id} (Atualizar informações do cliente com corpo da requisição)
 
@@ -174,6 +188,32 @@ Criar um CRUD para cadastrar os endereços do cliente, essa entidade cliente_end
 
     Caso queira editar algum endereço, sem apagá-lo do sistema, use o endpoint:<br>
     **PUT /cliente/{idCliente}/endereco/{idEndereco}**
-</div>
 
+<br>
+
+ - #### DEL /cliente/{id} (Deletar cliente e todos os seus endereços)
+
+ <br>
+
+ ### **Endereco endpoints**
+
+ - #### GET /cliente/{idCliente}/endereco (Listar somente os endereços de um usuário)
+
+<br>
+
+- #### POST /cliente/{idCliente}/endereco (Salvar novo endereço para um cliente)
+
+<br>
+
+- #### GET /cliente/{idCliente}/endereco/{idEndereco} (Listar somente um endereço especifico de um usuário)
+
+<br>
+
+- #### PUT /cliente/{idCliente}/endereco/{idEndereco} (Editar endereco de um cliente)
+
+    Assim como no endpoint de edição de cliente, aqui também é possível editar campos individualmente.
+
+<br>
+
+- #### DEL /cliente/{idCliente}/endereco/{idEndereco} (Deletar endereco de um cliente)
 

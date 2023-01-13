@@ -24,7 +24,6 @@ public class EnderecoCadastroDTO {
     private String logradouro;
 
     @NotNull
-    @Pattern(regexp = "\\d{8}", message = "O cep deve conter 8 digitos")
     private Integer cep;
 
     @NotNull
