@@ -97,7 +97,12 @@ public class ClienteEnderecoService {
 
     private Endereco getEnderecoOuExcecao(Long idCliente, Long idEndereco) {
         Cliente clienteSalvo = getClienteOuExcecao(idCliente);
-        return enderecoRepository.findById(idEndereco).orElseThrow(
+        Endereco enderecoASerProcurado = enderecoRepository.findById(idEndereco).orElseThrow(
                 () -> new EntityNotFoundException("Endereço de id " + idEndereco + " não encontrado"));
+        if (clienteSalvo.getEnderecos().contains(enderecoASerProcurado)) {
+            return enderecoASerProcurado;
+        } else {
+            throw new EntityNotFoundException("Não foi possível achar o endereco " + idEndereco);
+        }
     }
 }
