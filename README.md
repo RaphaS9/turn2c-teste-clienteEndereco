@@ -20,7 +20,7 @@ Criar um CRUD para cadastrar os endereços do cliente, essa entidade cliente_end
 ## Tencologias utilizadas
 
 - Maven
-- Java 15
+- Java 17
 - Spring Boot
 - Lombok
 - Spring data jpa
