@@ -56,7 +56,7 @@ Também há um ExceptionHandler configurado para algumas exceções, devolvendo 
 - #### POST /cliente (Adicionar novo cliente com corpo da requisição)
     O corpo da requisição deve conter as seguintes informações:
 
-    {
+        {
 
         "nome" : "clienteTeste",
         "email": "cliente@teste.com",
@@ -72,7 +72,7 @@ Também há um ExceptionHandler configurado para algumas exceções, devolvendo 
             
             },
         ]
-    }
+        }
 
 <br>
 
